@@ -1,4 +1,6 @@
-$topnav-background-color: #222;
+@import '../../../../styles/variables.scss';
+
+$side-bar-item-color: #333;
 .sidebar {
     border-radius: 0;
     position: fixed;
@@ -7,11 +9,13 @@ $topnav-background-color: #222;
     left: 235px;
     width: 235px;
     margin-left: -235px;
-    margin-bottom: 48px;
+  //  margin-bottom: 48px;
+
+    //    border-right: 1px solid rgba(0, 0, 0, 0.1);
     border: none;
-    border-radius: 0;
+   // border-radius: 0;
     overflow-y: auto;
-    background-color: $topnav-background-color;
+    background: $app-sidebar-primary-color;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px;
@@ -23,28 +27,49 @@ $topnav-background-color: #222;
     transition: all 0.2s ease-in-out;
     // border-top: 1px solid rgba(255,255,255,0.3);
     .list-group {
-        a.list-group-item {
-            background: $topnav-background-color;
+
+        a.list-group-element {
+          //  background: $app-sidebar-primary-color;
             border: 0;
             border-radius: 0;
-            color: #999;
+            color: $side-bar-item-color;
+
+
+            	position: relative;
+                display: block;
+                padding: 0.75rem 1.25rem;
+
             text-decoration: none;
             .fa {
                 margin-right: 10px;
+                    color: #999;
             }
         }
         a:hover {
-            background: darken($topnav-background-color, 5%);
-            color: #fff;
+            background: darken($app-primary-color, 0%);
+            color: $app-secondary-color;
+            .fa {
+                     color: $app-secondary-color;
+                }
         }
         a.router-link-active {
-            background: darken($topnav-background-color, 5%);
-            color: #fff;
+            background: darken($app-primary-color, 0%);
+            color: $app-secondary-color;
+            .fa {
+                    color:$app-secondary-color;
+                 }
+        }
+         .menu-header {
+            color: rgba(61,68,101,.5);
+            padding: 0 1.5rem;
+            font-size: .75rem;
+            text-transform: uppercase;
+            font-weight: 700;
         }
         .header-fields {
             padding-top: 10px;
 
-            > .list-group-item:first-child {
+            > .list-group-element:first-child {
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
         }
@@ -62,7 +87,7 @@ $topnav-background-color: #222;
                 color: #999;
                 text-decoration: none;
                 font-weight: 400;
-                background: $topnav-background-color;
+                background: $app-sidebar-primary-color;
                 span {
                     position: relative;
                     display: block;
@@ -78,7 +103,7 @@ $topnav-background-color: #222;
             }
         }
         .panel-title:hover {
-            background: darken($topnav-background-color, 5%);
+            background: darken($app-sidebar-primary-color, 0%);
         }
         .panel-collapse {
             border-radious: 0;
@@ -86,7 +111,7 @@ $topnav-background-color: #222;
             .panel-body {
                 .list-group-item {
                     border-radius: 0;
-                    background-color: $topnav-background-color;
+                    background-color: $app-sidebar-primary-color;
                     border: 0 solid transparent;
                     a {
                         color: #999;
@@ -96,15 +121,20 @@ $topnav-background-color: #222;
                     }
                 }
                 .list-group-item:hover {
-                    background: darken($topnav-background-color, 5%);
+                    background: darken($app-sidebar-primary-color, 0%);
                 }
             }
         }
     }
 }
 
+.sidebar-profile{
+   // border-color: rgba(61, 68, 101, 0.5);
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+    }
+
 .nested-menu {
-    .list-group-item {
+    .list-group-element {
         cursor: pointer;
     }
     .nested {
@@ -172,7 +202,7 @@ $topnav-background-color: #222;
         font-size: 23px;
     }
     &:hover {
-        background: darken($topnav-background-color, 5%);
+        background: darken($app-sidebar-primary-color, 5%);
         color: #fff;
     }
     border-top: 1px solid #999;
@@ -183,9 +213,11 @@ $topnav-background-color: #222;
     transition: all 0.2s ease-in-out;
 }
 
+
 .collapsed {
     width: 60px;
     span {
         display: none;
     }
+
 }

@@ -10,6 +10,7 @@ import { routerTransition } from '../../router.animations';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
+list: boolean = true;
 
     constructor() {
         this.sliders.push(
